@@ -10,8 +10,8 @@ class GrepTest {
 
 	@Test
 	void testCheckForSting() {
-		Grep.checkForSting("C:\\cspro\\stringcount.txt", "hai");
-		assertEquals(437, Grep.checkForSting("C:\\cspro\\stringcount.txt", "hai"));
+		Grep.checkForSting("C:\\cspro\\stringcount.txt", "HAI");
+		assertEquals(21, Grep.checkForSting("C:\\cspro\\stringcount.txt", "HAI"));
 	}
 
 }

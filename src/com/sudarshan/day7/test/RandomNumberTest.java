@@ -37,7 +37,6 @@ class RandomNumberTest {
 		}
 
 		TreeSet<Integer> treeSet = new TreeSet<>();
-		ArrayList<Integer> array = new ArrayList<>();
 		try (FileReader reader = new FileReader(fileOutputStream); BufferedReader bfReader = new BufferedReader(reader)) {
 			String line;
 			while((line = bfReader.readLine()) != null) {

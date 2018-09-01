@@ -14,10 +14,12 @@ class FileWithRandomNumbers {
 	@Test
 	void testFileWithRandomNumbers() {
 		Random r = new Random();
+		Integer num;
 		File file = new File("C:\\cspro\\sudhu1.txt");
 		try (PrintWriter writer = new PrintWriter(file)) {
 			for (Integer i = 0; i < 100; i++) {
-				writer.println(r.nextInt(50));
+				num = r.nextInt(50);
+				writer.println(Integer.toBinaryString(num));
 			}
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
