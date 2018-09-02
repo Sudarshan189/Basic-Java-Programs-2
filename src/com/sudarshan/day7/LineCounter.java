@@ -7,16 +7,9 @@ import java.io.IOException;
 
 public class LineCounter {
 
-
-	 
-
-
-
 	public static int countLine(String filePath) {
 		int count = 0;
-		try (FileReader fileReader = new FileReader(filePath);
-				BufferedReader reader = new BufferedReader(fileReader)) {
-
+		try (FileReader fileReader = new FileReader(filePath); BufferedReader reader = new BufferedReader(fileReader)) {
 			while (reader.readLine() != null) {
 				count++;
 			}

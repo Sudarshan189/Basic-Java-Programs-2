@@ -10,7 +10,6 @@ public class FutureDate {
 
 	public FutureDate() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public FutureDate(String localDate) {

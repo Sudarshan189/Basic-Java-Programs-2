@@ -15,6 +15,7 @@ class DateFormatTest {
 		assertEquals("12/02/2014", date.getFormateOne());
 		date.getFormateTwo();
 		assertEquals("12,February,2014", date.getFormateTwo());
+		
 	}
 
 }

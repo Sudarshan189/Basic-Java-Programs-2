@@ -17,17 +17,17 @@ public class FileOperation {
 
 		File file1 = new File(fileLink1);
 		File file2 = new File(fileLink2);
-		
-		Stack<Character> stack = new Stack<>(); 
+
+		Stack<Character> stack = new Stack<>();
 
 		try (FileReader fileReader = new FileReader(file1);
 				BufferedReader bufferReader = new BufferedReader(fileReader)) {
 			String lines;
-			while((lines = bufferReader.readLine()) != null) {
-				for(int i=0; i<lines.length(); i++) {
+			while ((lines = bufferReader.readLine()) != null) {
+				for (int i = 0; i < lines.length(); i++) {
 					stack.push(lines.charAt(i));
 				}
-			}	
+			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -37,8 +37,8 @@ public class FileOperation {
 		}
 
 		try (PrintWriter printWriter = new PrintWriter(file2)) {
-				System.out.println(stack.size());
-				int size = stack.size();
+			System.out.println(stack.size());
+			int size = stack.size();
 			for (int i = 0; i < size; i++) {
 				printWriter.print(stack.pop());
 			}
@@ -53,28 +53,25 @@ public class FileOperation {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		
-		
+
 		return false;
 	}
-	
-	
+
 	public static boolean convert(String fileLink1, String fileLink2) {
 
 		File file1 = new File(fileLink1);
 		File file2 = new File(fileLink2);
-		
+
 		Queue queue = new Queue();
-		
 
 		try (FileReader fileReader = new FileReader(file1);
 				BufferedReader bufferReader = new BufferedReader(fileReader)) {
 			String lines;
-			while((lines = bufferReader.readLine()) != null) {
-				for(int i=0; i<lines.length(); i++) {
-					queue.enQueue(lines.charAt(i));
+			while ((lines = bufferReader.readLine()) != null) {
+				for (int i = 0; i < lines.length(); i++) {
+					queue.add(lines.charAt(i));
 				}
-			}	
+			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -84,10 +81,10 @@ public class FileOperation {
 		}
 
 		try (PrintWriter printWriter = new PrintWriter(file2)) {
-				System.out.println(queue.size());
-				int size = queue.size();
+			System.out.println(queue.size());
+			int size = queue.size();
 			for (int i = 0; i < size; i++) {
-				printWriter.print(queue.deQueue());
+				printWriter.print(queue.remove());
 			}
 			return true;
 		} catch (FileNotFoundException e) {
@@ -100,8 +97,7 @@ public class FileOperation {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		
-		
+
 		return false;
 	}
 

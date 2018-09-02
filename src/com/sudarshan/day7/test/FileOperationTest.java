@@ -11,7 +11,10 @@ class FileOperationTest {
 	@Test
 	void testReverse() {
 //		FileOperation.reverse("C:\\cspro\\FileOperation\\reverse.txt", "C:\\cspro\\FileOperation\\reverseOutput.txt");
-		FileOperation.convert("C:\\cspro\\FileOperation\\reverse.txt", "C:\\cspro\\FileOperation\\convertOutput.txt");
+		///home/sudarshan/Capgemini/vowelcount.txt
+	//	FileOperation.convert("C:\\cspro\\FileOperation\\reverse.txt", "C:\\cspro\\FileOperation\\convertOutput.txt");
+		FileOperation.convert("/home/sudarshan/Capgemini/operation.txt", "/home/sudarshan/Capgemini/copyoperation.txt");
+		
 	}
 
 }
