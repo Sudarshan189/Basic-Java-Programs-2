@@ -44,13 +44,9 @@ public class FileOperation {
 
 		try (PrintWriter printWriter = new PrintWriter(file2)) {
 			System.out.println(stack.size());
-			for (Character ch : stack) {
-				System.out.print(ch);
-				if (ch == '\n')
-					printWriter.println();
-				else
-					printWriter.print(ch);
-
+			int size = stack.size();
+			for (int i = 0; i < size; i++) {
+				printWriter.print(stack.pop());
 			}
 			/*
 			 * int size = stack.size(); for (int i = 0; i < size; i++) {
