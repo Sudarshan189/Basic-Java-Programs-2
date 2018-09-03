@@ -1,6 +1,7 @@
 package com.sudarshan.day7;
 
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.LinkedList;
 
@@ -23,6 +24,12 @@ public class Assignments {
 	}
 
 	public static boolean add(Assignments assign) {
+		try {
+			assign.assignmentFile.createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if (linked.add(assign)) {
 			return true;
 		}
@@ -30,7 +37,7 @@ public class Assignments {
 	}
 
 	public static boolean remove(Assignments assign) {
-		// assign.assignmentFile.delete();
+		assign.assignmentFile.delete();
 		if (linked.remove(assign)) {
 			return true;
 		}

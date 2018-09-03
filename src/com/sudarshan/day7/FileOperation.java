@@ -22,12 +22,16 @@ public class FileOperation {
 
 		Stack<Character> stack = new Stack<>();
 
-		try (FileReader fileReader = new FileReader(file1);
-				BufferedReader bufferReader = new BufferedReader(fileReader)) {
+		try (BufferedReader bufferReader = new BufferedReader(new FileReader(file1))) {
 			String lines;
+
 			while ((lines = bufferReader.readLine()) != null) {
+				if (lines.length() == 0) {
+					stack.push('\n');
+				}
 				for (int i = 0; i < lines.length(); i++) {
 					stack.push(lines.charAt(i));
+					System.out.print(lines.charAt(i));
 				}
 			}
 		} catch (FileNotFoundException e) {
@@ -40,10 +44,18 @@ public class FileOperation {
 
 		try (PrintWriter printWriter = new PrintWriter(file2)) {
 			System.out.println(stack.size());
-			int size = stack.size();
-			for (int i = 0; i < size; i++) {
-				printWriter.print(stack.pop());
+			for (Character ch : stack) {
+				System.out.print(ch);
+				if (ch == '\n')
+					printWriter.println();
+				else
+					printWriter.print(ch);
+
 			}
+			/*
+			 * int size = stack.size(); for (int i = 0; i < size; i++) {
+			 * printWriter.print(stack.pop()); }
+			 */
 			return true;
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -107,7 +119,6 @@ public class FileOperation {
 		File file1 = new File(fileLink1);
 		File file2 = new File(fileLink2);
 
-		
 		LinkedList<Character> queue1 = new LinkedList<Character>();
 		LinkedList<Character> queue2 = new LinkedList<Character>();
 // file 1
@@ -142,12 +153,11 @@ public class FileOperation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		int size1 = queue1.size();
 		int size2 = queue2.size();
-		
 
-		if(queue1.equals(queue2)) {
+		if (queue1.equals(queue2)) {
 			System.out.println("Same");
 			return true;
 		}

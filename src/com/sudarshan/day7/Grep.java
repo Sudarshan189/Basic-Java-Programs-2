@@ -13,7 +13,7 @@ public class Grep {
 		String lines = null;
 		String[] lineArray = null;
 		File file = new File(fileName);
-		try (FileReader reader = new FileReader(file); BufferedReader bufferedReader = new BufferedReader(reader)) {
+		try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
 			while ((lines = bufferedReader.readLine().toLowerCase()) != null) {
 				lineArray = lines.split("\\s+");
 				for (String word : lineArray) {

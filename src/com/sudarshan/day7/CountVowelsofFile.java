@@ -26,7 +26,7 @@ public class CountVowelsofFile {
 		Set<CountVowelsofFile> hashSet = new HashSet<>();
 		int vowels = 0;
 		int consonents = 0;
-		try (FileReader fileReader = new FileReader(link); BufferedReader reader = new BufferedReader(fileReader)) {
+		try ( BufferedReader reader = new BufferedReader( new FileReader(link))) {
 			String buffer;
 			while ((buffer = reader.readLine()) != null) {
 				for (int i = 0; i < buffer.length(); i++) {
