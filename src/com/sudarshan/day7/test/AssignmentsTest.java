@@ -11,7 +11,7 @@ import com.sudarshan.day7.Assignments;
 class AssignmentsTest {
 
 	@Test
-	void test() {
+	void testAssignments() {
 		
 		
 		Assignments assign1 = new Assignments("Java", LocalDate.of(2014, 9, 25));
