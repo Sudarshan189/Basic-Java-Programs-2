@@ -1,10 +1,11 @@
 package com.sudarshan.day7;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.LinkedList;
 
 public class Assignments {
-	private String assignmentName;
+	private File assignmentFile;
 	private LocalDate dueDate;
 
 	private static LinkedList<Assignments> linked = new LinkedList<>();
@@ -14,9 +15,10 @@ public class Assignments {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Assignments(String assignmentName, LocalDate dueDate) {
+	public Assignments(File assignmentName, LocalDate dueDate) {
 		super();
-		this.assignmentName = assignmentName;
+		
+		this.assignmentFile = assignmentName;
 		this.dueDate = dueDate;
 	}
 
@@ -28,6 +30,7 @@ public class Assignments {
 	}
 
 	public static boolean remove(Assignments assign) {
+		// assign.assignmentFile.delete();
 		if (linked.remove(assign)) {
 			return true;
 		}
@@ -62,7 +65,7 @@ public class Assignments {
 
 	@Override
 	public String toString() {
-		return "Assignments [assignmentName=" + assignmentName + ", dueDate=" + dueDate + "]";
+		return "Assignments [assignmentName=" + assignmentFile + ", dueDate=" + dueDate + "]";
 	}
 
 }
